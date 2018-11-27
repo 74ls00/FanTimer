@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.4">
+<eagle version="6.3">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -148,8 +148,8 @@
 </layers>
 <board>
 <plain>
-<dimension x1="60.96" y1="96.52" x2="128.27" y2="101.6" x3="94.615" y3="-13.97" textsize="3.5" layer="21" dtype="horizontal"/>
-<dimension x1="151.13" y1="58.42" x2="143.51" y2="63.5" x3="52.07" y3="60.96" textsize="3.5" layer="21" dtype="vertical"/>
+<dimension x1="60.96" y1="96.52" x2="128.27" y2="101.6" x3="94.615" y3="-13.97" layer="21" dtype="horizontal"/>
+<dimension x1="146.05" y1="5.08" x2="137.16" y2="95.25" x3="52.07" y3="50.165" layer="21" dtype="vertical"/>
 </plain>
 <libraries>
 <library name="st-microelectronics">
@@ -1528,28 +1528,6 @@ diameter 2.54 mm, horizontal, grid 10.16 mm</description>
 </package>
 </packages>
 </library>
-<library name="optocoupler">
-<description>&lt;b&gt;Opto Couplers&lt;/b&gt;&lt;p&gt;
-Siemens, Hewlett-Packard, Texas Instuments, Sharp, Motorola&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="DIL04">
-<description>&lt;b&gt;Dual In Line Package&lt;/b&gt;</description>
-<wire x1="2.54" y1="2.921" x2="-2.54" y2="2.921" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="-2.921" x2="2.54" y2="-2.921" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="2.921" x2="2.54" y2="-2.921" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="2.921" x2="-2.54" y2="1.016" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="-2.921" x2="-2.54" y2="-1.016" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="1.016" x2="-2.54" y2="-1.016" width="0.1524" layer="21" curve="-180"/>
-<pad name="1" x="-1.27" y="-3.81" drill="0.8128" shape="offset" rot="R270"/>
-<pad name="2" x="1.27" y="-3.81" drill="0.8128" shape="offset" rot="R270"/>
-<pad name="3" x="1.27" y="3.81" drill="0.8128" shape="offset" rot="R90"/>
-<pad name="4" x="-1.27" y="3.81" drill="0.8128" shape="offset" rot="R90"/>
-<text x="4.191" y="-2.921" size="1.27" layer="27" ratio="10" rot="R90">&gt;VALUE</text>
-<text x="-2.921" y="-2.667" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
-</package>
-</packages>
-</library>
 <library name="transistor">
 <description>&lt;b&gt;Transistors&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
@@ -1806,12 +1784,6 @@ Siemens, Hewlett-Packard, Texas Instuments, Sharp, Motorola&lt;p&gt;
 <element name="C3" library="rcl" package="E2,5-7" value="" x="102.87" y="45.72" rot="R180"/>
 <element name="U$4" library="DSS0" package="DIL6" value="MOC3063MD" x="86.36" y="90.17" rot="R180"/>
 <element name="R7" library="rcl" package="0207/10" value="250" x="110.49" y="24.13"/>
-<element name="OK1" library="optocoupler" package="DIL04" value="PC817" x="149.86" y="41.91" rot="R180">
-<attribute name="OC_NEWARK" value="97K7059" x="149.86" y="41.91" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MPN" value="PC817X4J000F" x="149.86" y="41.91" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MF" value="" x="149.86" y="41.91" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="OC_FARNELL" value="9707727" x="149.86" y="41.91" size="1.778" layer="27" rot="R180" display="off"/>
-</element>
 <element name="T2" library="transistor" package="TO92-ECB" value="" x="74.93" y="30.48" rot="R180"/>
 <element name="N" library="DSS0" package="CON_PWR_2PIN4MM" value="" x="74.93" y="82.55" rot="R270"/>
 <element name="RF2" library="rcl" package="R1206" value="" x="80.01" y="66.04" rot="MR180"/>
@@ -1919,11 +1891,9 @@ Siemens, Hewlett-Packard, Texas Instuments, Sharp, Motorola&lt;p&gt;
 <wire x1="81.432" y1="66.04" x2="102.87" y2="54.61" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="LINE">
-<contactref element="RF1" pad="1"/>
 <contactref element="LINE" pad="1"/>
 <contactref element="R1" pad="2"/>
 <contactref element="T1" pad="T2"/>
-<wire x1="72.39" y1="73.12" x2="67.158" y2="87.63" width="0" layer="19" extent="16-16"/>
 <wire x1="69.85" y1="53.34" x2="72.39" y2="73.12" width="0" layer="19" extent="1-1"/>
 <wire x1="77.68636875" y1="49.9035" x2="69.85" y2="53.34" width="0" layer="19" extent="1-1"/>
 </signal>
@@ -1972,7 +1942,9 @@ Siemens, Hewlett-Packard, Texas Instuments, Sharp, Motorola&lt;p&gt;
 <signal name="N$18">
 <contactref element="LINE" pad="2"/>
 <contactref element="RF2" pad="1"/>
-<wire x1="72.39" y1="69.12" x2="78.588" y2="66.04" width="0" layer="19" extent="16-16"/>
+<contactref element="RF1" pad="1"/>
+<wire x1="72.39" y1="69.12" x2="67.158" y2="87.63" width="0" layer="19" extent="16-16"/>
+<wire x1="78.588" y1="66.04" x2="72.39" y2="69.12" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="N$20">
 <contactref element="D2" pad="A"/>
